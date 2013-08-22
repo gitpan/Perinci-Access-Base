@@ -1,14 +1,33 @@
 NAME
-    Perinci::Access::Base - Base class for Perinci Riap clients
+    Perinci::Access::Base - Base class for all Perinci Riap clients
 
 VERSION
-    version 0.28
+    version 0.29
+
+DESCRIPTION
+    This is a thin base class for all Riap clients ("Perinci::Access::*").
+    It currently only provides check_request() to do some basic sanity
+    checking of the Riap request hash $req. It also provides a barebones
+    "new()".
+
+METHODS
+  new(%args) => OBJ
+    Constructor. Does nothing except creating a blessed hashref from %args.
+    Subclasses should override this method and do additional stuffs as
+    needed.
+
+  check_request($req) => RESP|undef
+    Should be called by subclasses during the early phase in "request()".
+    Will return an enveloped error response on error, or undef on success.
+
+SEE ALSO
+    Perinci::Access
 
 AUTHOR
     Steven Haryanto <stevenharyanto@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2012 by Steven Haryanto.
+    This software is copyright (c) 2013 by Steven Haryanto.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
