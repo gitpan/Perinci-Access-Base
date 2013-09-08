@@ -17,16 +17,21 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Perinci-Access-Base",
-  "dist_version" => "0.29",
+  "dist_version" => "0.30",
   "license" => "perl",
   "module_name" => "Perinci::Access::Base",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
+    "URI::Split" => 0,
     "perl" => "5.010001"
   },
   "script_files" => [],
-  "test_requires" => {}
+  "test_requires" => {
+    "Capture::Tiny" => 0,
+    "Test::More" => "0.88",
+    "blib" => 0
+  }
 );
 
 

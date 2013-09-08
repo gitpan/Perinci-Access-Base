@@ -2,13 +2,18 @@ NAME
     Perinci::Access::Base - Base class for all Perinci Riap clients
 
 VERSION
-    version 0.29
+    version 0.30
 
 DESCRIPTION
     This is a thin base class for all Riap clients ("Perinci::Access::*").
-    It currently only provides check_request() to do some basic sanity
-    checking of the Riap request hash $req. It also provides a barebones
-    "new()".
+    It currently only provides check_request() which does the following:
+
+    *   perform some basic sanity checking of the Riap request hash $req
+
+    *   split request keys "uri"
+
+        Split result is put in "$req->{-uri_scheme}", "$req->{-uri_auth}",
+        "$req->{-uri_path}", "$req->{-uri_query}", and "$req->{-uri_frag}".
 
 METHODS
   new(%args) => OBJ
