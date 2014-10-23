@@ -6,7 +6,7 @@ use warnings;
 
 use URI::Split qw(uri_split);
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 sub new {
     my ($class, %opts) = @_;
@@ -34,7 +34,8 @@ sub check_request {
     #}
 
     $req->{v} //= 1.1;
-    return [500, "Protocol version not supported"] if $req->{v} ne '1.1';
+    return [500, "Protocol version not supported"]
+        if $req->{v} ne '1.1' && $req->{v} ne '1.2';
 
     my $action = $req->{action};
     return [400, "Please specify action"] unless $action;
@@ -57,13 +58,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Perinci::Access::Base - Base class for all Perinci Riap clients
 
 =head1 VERSION
 
-version 0.30
+This document describes version 0.31 of Perinci::Access::Base (from Perl distribution Perinci-Access-Base), released on 2014-10-23.
 
 =head1 DESCRIPTION
 
@@ -97,13 +100,29 @@ return an enveloped error response on error, or undef on success.
 
 L<Perinci::Access>
 
+=head1 HOMEPAGE
+
+Please visit the project's homepage at L<https://metacpan.org/release/Perinci-Access-Base>.
+
+=head1 SOURCE
+
+Source repository is at L<https://github.com/perlancar/perl-Perinci-Access-Base>.
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website L<https://rt.cpan.org/Public/Dist/Display.html?Name=Perinci-Access-Base>
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
 =head1 AUTHOR
 
-Steven Haryanto <stevenharyanto@gmail.com>
+perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Steven Haryanto.
+This software is copyright (c) 2014 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -2,7 +2,8 @@ NAME
     Perinci::Access::Base - Base class for all Perinci Riap clients
 
 VERSION
-    version 0.30
+    This document describes version 0.31 of Perinci::Access::Base (from Perl
+    distribution Perinci-Access-Base), released on 2014-10-23.
 
 DESCRIPTION
     This is a thin base class for all Riap clients ("Perinci::Access::*").
@@ -28,11 +29,26 @@ METHODS
 SEE ALSO
     Perinci::Access
 
+HOMEPAGE
+    Please visit the project's homepage at
+    <https://metacpan.org/release/Perinci-Access-Base>.
+
+SOURCE
+    Source repository is at
+    <https://github.com/perlancar/perl-Perinci-Access-Base>.
+
+BUGS
+    Please report any bugs or feature requests on the bugtracker website
+    <https://rt.cpan.org/Public/Dist/Display.html?Name=Perinci-Access-Base>
+
+    When submitting a bug or request, please include a test-file or a patch
+    to an existing test-file that illustrates the bug or desired feature.
+
 AUTHOR
-    Steven Haryanto <stevenharyanto@gmail.com>
+    perlancar <perlancar@cpan.org>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2013 by Steven Haryanto.
+    This software is copyright (c) 2014 by perlancar@cpan.org.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
