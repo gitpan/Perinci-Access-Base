@@ -2,8 +2,8 @@ NAME
     Perinci::Access::Base - Base class for all Perinci Riap clients
 
 VERSION
-    This document describes version 0.31 of Perinci::Access::Base (from Perl
-    distribution Perinci-Access-Base), released on 2014-10-23.
+    This document describes version 0.32 of Perinci::Access::Base (from Perl
+    distribution Perinci-Access-Base), released on 2014-10-24.
 
 DESCRIPTION
     This is a thin base class for all Riap clients ("Perinci::Access::*").
@@ -16,6 +16,8 @@ DESCRIPTION
         Split result is put in "$req->{-uri_scheme}", "$req->{-uri_auth}",
         "$req->{-uri_path}", "$req->{-uri_query}", and "$req->{-uri_frag}".
 
+ATTRIBUTES
+  riap_version => float (default: 1.1)
 METHODS
   new(%args) => OBJ
     Constructor. Does nothing except creating a blessed hashref from %args.

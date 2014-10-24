@@ -6,10 +6,11 @@ use warnings;
 
 use URI::Split qw(uri_split);
 
-our $VERSION = '0.31'; # VERSION
+our $VERSION = '0.32'; # VERSION
 
 sub new {
     my ($class, %opts) = @_;
+    $opts{riap_version} //= 1.1;
     bless \%opts, $class;
 }
 
@@ -66,7 +67,7 @@ Perinci::Access::Base - Base class for all Perinci Riap clients
 
 =head1 VERSION
 
-This document describes version 0.31 of Perinci::Access::Base (from Perl distribution Perinci-Access-Base), released on 2014-10-23.
+This document describes version 0.32 of Perinci::Access::Base (from Perl distribution Perinci-Access-Base), released on 2014-10-24.
 
 =head1 DESCRIPTION
 
@@ -83,6 +84,10 @@ Split result is put in C<< $req->{-uri_scheme} >>, C<< $req->{-uri_auth} >>, C<<
 $req->{-uri_path} >>, C<< $req->{-uri_query} >>, and C<< $req->{-uri_frag} >>.
 
 =back
+
+=head1 ATTRIBUTES
+
+=head2 riap_version => float (default: 1.1)
 
 =head1 METHODS
 
